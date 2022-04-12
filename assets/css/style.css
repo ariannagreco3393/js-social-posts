@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #083047;
+    font-family: 'Poppins', sans-serif;
+}
+header {
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.posts {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.post {
+    width: calc(100% / 1);
+    background-color: white;
+    padding: 1rem;
+}
+
+.heading {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.foto_user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.nome {
+    font-size: 12px;
+    font-weight:bolder;
+}
+
+.data {
+    font-size: 8px;
+    color: gray;
+    line-height: 0.2rem;
+}
+
+.post_text {
+    margin-top: 0.5rem;
+    font-size: 10px;
+    line-height: 0.8rem;
+}
+
+.img_post > img{
+    margin-top: 1rem;
+    width: 500px;
+    height: 230px;
+}
+
+.post_footer {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    border: none;
+    background-color: white;
+  }
+  
+.fa-solid {
+    margin-right: 3px;
+}
