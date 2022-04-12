@@ -71,8 +71,9 @@ const post = posts.forEach((element) => {
      const likes = element.likes */
 
     //console.log(id, nome, foto, data, testo, img, likes);
+
     const postMarkup = `
-    <div class="post">
+    <div class="post" id="${element.id}">
                     <div class="heading">
                         <div class="heading_foto">
                             <img class="foto_user"
@@ -91,33 +92,50 @@ const post = posts.forEach((element) => {
                     </div>
                     <div class="post_footer">
                         <button class="btn"><i class="fa-solid fa-thumbs-up"></i>Mi Piace</button>
-                        <p class="likes_number">Piace a ${element.likes} persone</p>
+                        <p class="likes_number">Piace a <span class="number">${element.likes}</span>  persone</p>
                     </div>
                 </div>
     `
 
     postsElement.insertAdjacentHTML('beforeend', postMarkup);
 
-    /* 
-    Milestone 3
-    Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter 
-    dei likes relativo. Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
-    */
-
-    //seleziono il bottone
-    const btnElement = document.querySelector('.btn')
-
-    //ascolto per il click
-    btnElement.addEventListener('click', function () {
-        //coloro di blue al click
-        btnElement.classList.toggle('blue')
-
-        //incremento il counter di 1
-        const likesIncrease = element.likes++
-
-    })
 
 });
+
+
+/* 
+  Milestone 3
+  Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter 
+  dei likes relativo. 
+  Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
+  */
+
+//seleziono il bottone
+const btnElement = document.querySelectorAll('.btn')
+//console.log(btnElement);
+
+btnElement.forEach((element, index) => {
+    //ascolto per il click
+    element.addEventListener('click', function () {
+        //coloro di blue al click
+        element.classList.toggle('blue')
+
+        //incremento il like
+        posts[index].likes++
+        const postElement = document.getElementById(`${posts[index].id}`)
+        //console.log(postElement);
+        const spanElement = postElement.querySelector('.number')
+        spanElement.innerHTML = posts[index].likes
+
+    })
+});
+
+//salviamo in un seocndo array gli id dei post con like
+const addLike = []
+
+
+
+
 
 
 
