@@ -98,6 +98,25 @@ const post = posts.forEach((element) => {
 
     postsElement.insertAdjacentHTML('beforeend', postMarkup);
 
+
+       //seleziono il bottone
+
+       const btnElement = document.querySelector('.btn')
+
+       //ascolto per il click
+       btnElement.addEventListener('click', function () {
+           //coloro di blue al click
+           btnElement.classList.toggle('blue')
+   
+           //incremento il counter di 1
+           const likes = element.likes++
+           console.log(likes);
+       
+          
+       })
+   
+
+ 
 });
 
 /* 
@@ -108,15 +127,8 @@ dei likes relativo. Salviamo in un secondo array gli id dei post ai quali abbiam
 
 
 
-    //seleziono il bottone
-
-    const btnElement = document.querySelector('.btn')
-
-    //ascolto per il click
-    btnElement.addEventListener('click', function () {
-        btnElement.classList.toggle('blue')
-
-    })
+ 
+    
 
 
 
