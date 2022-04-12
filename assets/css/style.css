@@ -87,6 +87,10 @@ button {
     background-color: white;
   }
 
+.blue{
+    color: blue;
+}
+
 .fa-solid {
     margin-right: 3px;
 }

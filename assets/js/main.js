@@ -59,17 +59,17 @@ console.log(postsElement);
 
 //uso foreach per il ciclo
 
-const post = posts.forEach((element)=>{
+const post = posts.forEach((element) => {
     //console.log(element.id, element.nome, element.foto);
 
-   /*  const id = element.id
-    const nome = element.nome
-    const foto = element.foto
-    const data = element.data
-    const testo = element.testo
-    const img = element.img
-    const likes = element.likes */
-    
+    /*  const id = element.id
+     const nome = element.nome
+     const foto = element.foto
+     const data = element.data
+     const testo = element.testo
+     const img = element.img
+     const likes = element.likes */
+
     //console.log(id, nome, foto, data, testo, img, likes);
     const postMarkup = `
     <div class="post">
@@ -96,6 +96,28 @@ const post = posts.forEach((element)=>{
                 </div>
     `
 
-    postsElement.insertAdjacentHTML('beforeend', postMarkup)
+    postsElement.insertAdjacentHTML('beforeend', postMarkup);
+
+});
+
+/* 
+Milestone 3
+Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter 
+dei likes relativo. Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
+*/
+
+
+
+    //seleziono il bottone
+
+    const btnElement = document.querySelector('.btn')
+
+    //ascolto per il click
+    btnElement.addEventListener('click', function () {
+        btnElement.classList.toggle('blue')
+
+    })
+
+
+
     
-})
