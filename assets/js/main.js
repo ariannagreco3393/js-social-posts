@@ -98,38 +98,33 @@ const post = posts.forEach((element) => {
 
     postsElement.insertAdjacentHTML('beforeend', postMarkup);
 
+    /* 
+    Milestone 3
+    Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter 
+    dei likes relativo. Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
+    */
 
-       //seleziono il bottone
+    //seleziono il bottone
+    const btnElement = document.querySelector('.btn')
 
-       const btnElement = document.querySelector('.btn')
+    //ascolto per il click
+    btnElement.addEventListener('click', function () {
+        //coloro di blue al click
+        btnElement.classList.toggle('blue')
 
-       //ascolto per il click
-       btnElement.addEventListener('click', function () {
-           //coloro di blue al click
-           btnElement.classList.toggle('blue')
-   
-           //incremento il counter di 1
-           const likes = element.likes++
-           console.log(likes);
-       
-          
-       })
-   
+        //incremento il counter di 1
+        const likesIncrease = element.likes++
 
- 
+    })
+
 });
 
-/* 
-Milestone 3
-Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter 
-dei likes relativo. Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
-*/
 
 
 
- 
-    
 
 
 
-    
+
+
+
