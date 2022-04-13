@@ -114,6 +114,9 @@ const post = posts.forEach((element) => {
 const btnElement = document.querySelectorAll('.btn')
 //console.log(btnElement);
 
+const addLike = []
+console.log(addLike);
+
 btnElement.forEach((element, index) => {
     //ascolto per il click
     element.addEventListener('click', function () {
@@ -122,16 +125,23 @@ btnElement.forEach((element, index) => {
 
         //incremento il like
         posts[index].likes++
+        //console.log(posts[index].likes++);
         const postElement = document.getElementById(`${posts[index].id}`)
         //console.log(postElement);
         const spanElement = postElement.querySelector('.number')
         spanElement.innerHTML = posts[index].likes
 
+        //salviamo in un seocndo array gli id dei post con like
+
+        if (!addLike.includes(posts[index].id)) {
+            addLike.push(posts[index].id)
+        }
+
+
     })
 });
 
-//salviamo in un seocndo array gli id dei post con like
-const addLike = []
+
 
 
 
